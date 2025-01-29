@@ -36,7 +36,14 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
     - name: docker build and push
-      user: 
+      uses: tegarimansyah/docker_build_push@main
+      with:
+        main: minshu22bd/lab2githubmactions
+        registry: docker.io
+        username: ${{secrets.MY_USER }}
+        password: ${{secrets.MY_USER}}
+        
+      
       
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
